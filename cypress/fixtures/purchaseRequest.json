@@ -1,0 +1,23 @@
+{
+    "CreatePurchaseRequest": {
+        "BudgetName": "TestBudget2025",
+        "RequestDepartment": "Test IT",
+        "BookOFAccount": "IF Cottages 20-21",
+        "Lines": [
+            {
+                "Product":"Slate Pencil",
+                "Quantity":"10",
+                "UnitOFMeasurement":"Case of 25Pack",
+                "Purposecode":"Stationery for Department/Office Use"
+            },
+            {
+                "Product":"Gel Pen",
+                "Quantity":"2",
+                "UnitOFMeasurement":"Pkt of 5Units",
+                "Purposecode":"Maintain Buildings & Facilities"
+            }
+        ],
+        "Comment":"Urgency",
+        "pr" : ""
+    }
+}

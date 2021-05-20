@@ -1,0 +1,25 @@
+{
+    "watchForFileChanges": false,
+    "chromeWebSecurity": false,
+    "reporter": "../node_modules/mochawesome/src/mochawesome.js",
+    "retries": 1,
+    "reporterOptions": {
+        "overwrite": false,
+        "html": false,
+        "json": true
+    },
+    "screenshotsFolder": "cypress/screenshots",
+    "env": {
+        "url": "https://purchase.sushumna.isha.in/web/login",
+        "CYPRESS_RECORD_KEY": "1618649612"
+    },
+    "projectId": "TestFeatureSulaba",
+    "testFiles": "**/*.{feature,features}",
+    "experimentalSourceRewriting": false,
+    "defaultCommandTimeout": 90000,
+    "pageLoadTimeout": 90000,
+    "requestTimeout": 5000,
+    "responseTimeout": 300000,
+    "taskTimeout": 60000,
+    "video": true
+}
