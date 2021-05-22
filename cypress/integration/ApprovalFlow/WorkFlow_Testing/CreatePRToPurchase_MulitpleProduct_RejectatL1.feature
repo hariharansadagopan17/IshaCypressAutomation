@@ -1,5 +1,5 @@
-Feature: Create PR To Purchase Post Schedule Exception L1 & L2
-    I want to create a Purchase Request  in Sulaba Website post schedule exception with L1  and L2 Approval
+Feature: Reject Submitted PR (Only L1 Approval)
+    The Submitted PR in sulaba website is rejected By L1 approver
 
     Scenario: To Login With User Credentials in Sulaba Site
         Given I open the login Page in Sulaba Website
@@ -7,7 +7,7 @@ Feature: Create PR To Purchase Post Schedule Exception L1 & L2
         And I do the assertions for login Button and login successfully
         And I take the screenshot
 
-    Scenario: Create PR and Send it for Item Correction
+    Scenario: To create and Submit pr with more than 1 products
         And I wait for "12" secs
         And I click on "dropdown" Bar
         And I wait for "12" secs
@@ -29,9 +29,14 @@ Feature: Create PR To Purchase Post Schedule Exception L1 & L2
         And I give the Following input in the 1st Row of Purchase Product page
             | Product      | Quantity | UnitOFMeasurement | Purposecode                          |
             | Slate Pencil | 10       | Case of 25Pack    | Stationery for Department/Office Use |
+        And I click on "Add a product" Button
+        And I give the Following input in the 2rd Row of Purchase Product page
+            | Product | Quantity | UnitOFMeasurement | Purposecode                     |
+            | Gel Pen | 2        | Pkt of 5Units     | Maintain Buildings & Facilities |
         And I take the screenshot
         And I verify The estimated cost for the First product is visible
-        And I verify The estimated cost for All product is visible
+        And I verify The estimated cost for the Second product is visible
+        And I verify The estimated cost for All products is visible
         And I verify The Total estimated cost for the products are visible
         And I click on "Save" button
         And I wait for "8" secs
@@ -55,7 +60,7 @@ Feature: Create PR To Purchase Post Schedule Exception L1 & L2
         And I do the assertions for login Button and login successfully
         And I take the screenshot
 
-    Scenario: Select Item for Correction & Submit PR for Approval
+    Scenario: Select All Item for Correction & Submit PR for Approval
         And I wait for "12" secs
         And I click on "dropdown" Bar
         And I wait for "12" secs
@@ -71,6 +76,7 @@ Feature: Create PR To Purchase Post Schedule Exception L1 & L2
         And I take the screenshot
         And I press button "Item Variant Correction"
         And I select on 1st row checkbox for item correction
+        And I select on 2rd row checkbox for item correction
         And I wait for "8" secs
         And I take the screenshot
         And I click on "Save" Button
@@ -108,7 +114,7 @@ Feature: Create PR To Purchase Post Schedule Exception L1 & L2
         And I do the assertions for login Button and login successfully
         And I take the screenshot
 
-    Scenario: Approve PR using L1 Approver credentials
+    Scenario: Approve PR using L1 Approver credentials & Verify PR is submitted for Purchase
         And I wait for "12" secs
         And I click on "dropdown" Bar
         And I wait for "12" secs
@@ -123,84 +129,9 @@ Feature: Create PR To Purchase Post Schedule Exception L1 & L2
         And I wait for "8" secs
         And I take the screenshot
         And I wait for "8" secs
-        And I click on "L1 Approved" Button
+        And I click on "L1 Rejected" Button
         And I wait for "8" secs
         And I click  on "Event history" Button
         And I wait for "8" secs
         And I check the Status of the PR in the Event History is visible
         And I wait for "8" secs
-        And I click on "o_user_menu" Bar
-        And I wait for "8" secs
-        And I click on "Log out" Button
-
-    Scenario: To Login with L2 Approver User
-        And I open the login Page in Sulaba Website
-        And I do the login for the L2 user by entering username as 'senthilprasad.c@ishafoundation.org' and password as '123'
-        And I do the assertions for login Button and login successfully
-        And I take the screenshot
-
-    Scenario: Approve PR using L2 user and Submit the PR For Schedule Exception
-        And I wait for "12" secs
-        And I click on "dropdown" Bar
-        And I wait for "12" secs
-        And I click on "Purchase requests" Button
-        And I wait for "45" secs
-        And I click on "nav-item dropdown o_extra_menu_items" Bar
-        And I wait for "12" secs
-        And I click on "Purchase Requests" button
-        And I wait for "8" secs
-        And I search for PR
-        And I click on PR
-        And I wait for "8" secs
-        And I take the screenshot
-        And I wait for "8" secs
-        And I click on "L2 Approved" Button
-        And I wait for "8" secs
-        And I click  on "Event history" Button
-        And I wait for "8" secs
-        And I check the Status of the PR in the Event History is visible
-        And I wait for "8" secs
-        And I click on "Edit"  Button
-        And I wait for "8" secs
-        And I give comment as "urgency" in exception remarks
-        And I wait for "8" secs
-        And I click on "Save" button
-        And I wait for "8" secs
-        And I click on "Submitted for Schedule Exception" button
-        And I click  on "Event history" Button
-        And I wait for "8" secs
-        And I check the Status of the PR in the Event History is visible
-        And I wait for "8" secs
-        And I click on "o_user_menu" Bar
-        And I wait for "8" secs
-        And I click on "Log out" Button
-
-    Scenario: To Login with Admin Approver User
-        And I open the login Page in Sulaba Website
-        And I do the login for the L2 user by entering username as 'senthilprasad.c@ishafoundation.org' and password as '123'
-        And I do the assertions for login Button and login successfully
-        And I take the screenshot
-
-    Scenario: Submit PR To Purchase
-        And I wait for "12" secs
-        And I click on "dropdown" Bar
-        And I wait for "12" secs
-        And I click on "Purchase requests" Button
-        And I wait for "45" secs
-        And I click on "nav-item dropdown o_extra_menu_items" Bar
-        And I wait for "12" secs
-        And I click on "Purchase Requests" button
-        And I wait for "8" secs
-        And I search for PR
-        And I click on PR
-        And I wait for "8" secs
-        And I take the screenshot
-        And I wait for "8" secs
-        And I click on "Submitted to Purchase" Button
-        And I wait for "8" secs
-        And I click  on "Event history" Button
-        And I wait for "8" secs
-        And I check the Status of the PR in the Event History is visible
-
-
-
